@@ -101,7 +101,12 @@ export const QuantitySelection = styled.button`
     border-radius: 6px;
 
     svg {
-        color: ${props => props.theme.purple}
+        color: ${props => props.theme.purple};
+
+        &:hover {
+            color: ${props => props.theme.purpleDark};
+            transition: 0.2s ;
+        }
     }
 `
 
@@ -113,5 +118,10 @@ padding: 0.5rem;
 border-radius: 6px;
 color: ${props => props.theme.white};
 background: ${props => props.theme.purpleDark};
+
+&:hover {
+    background: ${props => props.theme.purple};
+    transition: 0.2s ;
+}
 `
 
