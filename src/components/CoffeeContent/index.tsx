@@ -1,11 +1,16 @@
+import { CoffeeList } from "../../data/CoffeeList";
 import { CoffeeCard } from "../CoffeeCard";
 import { CoffeeContentContainer, TitleCoffeeContent } from "./styles";
 
 export function CoffeeContent() {
   return (
-    <CoffeeContentContainer>
+    <>
       <TitleCoffeeContent>Nossos cafés</TitleCoffeeContent>
-      <CoffeeCard />
-    </CoffeeContentContainer>
+      <CoffeeContentContainer>
+        {CoffeeList.map((coffee) => (
+          <CoffeeCard coffee={coffee} key={coffee.id} />
+        ))}
+      </CoffeeContentContainer>
+    </>
   );
 }

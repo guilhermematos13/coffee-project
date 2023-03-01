@@ -8,28 +8,28 @@ import {
   QuantitySelection,
   QuantitySelectionContainer,
   ShoppingCartButton,
+  TagContainer,
   TagTitle,
 } from "./styles";
-import TradicionalCoffee from "../../assets/TradicionalCoffee.svg";
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 
-export function CoffeeCard() {
+export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
   return (
-    <CoffeeCardContainer>
-      <img src={TradicionalCoffee} />
+    <CoffeeCardContainer key={coffee.id}>
+      <img src={coffee.image} />
+      <TagContainer>
+        {coffee.tags.map((tag) => (
+          <TagTitle>{tag}</TagTitle>
+        ))}
+      </TagContainer>
+      <CoffeeTitle>{coffee.title}</CoffeeTitle>
 
-      <TagTitle>TRADICIONAL</TagTitle>
-
-      <CoffeeTitle>Expresso Tradicional</CoffeeTitle>
-
-      <DescriptionCoffee>
-        O tradicional café feito com água quente e grãos moídos
-      </DescriptionCoffee>
+      <DescriptionCoffee>{coffee.description}</DescriptionCoffee>
 
       <FooterCard>
         <PriceTitle>
-          <p>R$</p>
-          <strong className="Price">9,90</strong>
+          <p>{coffee.coin}</p>
+          <strong className="Price">{coffee.price}</strong>
         </PriceTitle>
         <ActionsContainer>
           <QuantitySelectionContainer>

@@ -21,10 +21,17 @@ img {
 }
 `
 
+export const TagContainer = styled.div`
+display:flex;
+gap:0.25rem;
+
+`
+
 export const TagTitle = styled.span`
 display: flex;
 align-items: center;
 justify-content: center;
+text-transform: uppercase;
 padding: 0.25rem 0.5rem;
 margin-top: 0.75rem;
 height: 1.25rem;
