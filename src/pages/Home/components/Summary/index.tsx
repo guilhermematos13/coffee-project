@@ -1,5 +1,5 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
-import SummaryImage from "../../assets/HomeImage.svg";
+import SummaryImage from "../../../../assets/HomeImage.svg";
 import {
   IconsSummary,
   SummaryContainer,

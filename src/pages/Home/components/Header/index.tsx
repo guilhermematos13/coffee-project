@@ -1,5 +1,5 @@
 import { HeaderButton, HeaderContainer } from "./styles";
-import Logo from "../../assets/LogoHeader.svg";
+import Logo from "../../../../assets/LogoHeader.svg";
 import { MapPin, ShoppingCart } from "phosphor-react";
 
 export function Header() {
