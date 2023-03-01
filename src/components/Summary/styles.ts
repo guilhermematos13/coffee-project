@@ -1,13 +1,20 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import background from '../../assets/Background.svg'
 
 
 export const SummaryContainer = styled.div`
 width: 100%;
 height: 34rem;
+margin-top: 5.75rem;
 display: flex;
-align-items: center;
 justify-content: center;
-gap:3.5rem ;
+gap:3.5rem;
+background-image: url(${background});
+
+img {
+    height: 22.5rem;
+    width: 30rem;
+}
 `
 
 export const SummaryHeader = styled.header`
@@ -23,7 +30,7 @@ strong {
 p{
     margin-top: 1rem;
     font-size: 1.25rem;
-    color: ${props => props.theme.baseTitle}
+    color: ${props => props.theme.baseTitle};
 }
 `
 
@@ -37,7 +44,7 @@ span {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: ${props => props.theme.baseText}
+    color: ${props => props.theme.baseText};
 }
 `
 
