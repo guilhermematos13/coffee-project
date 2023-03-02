@@ -39,6 +39,7 @@ label {
 }
 
 p {
+    margin-top: 0.25rem;
     font-size: 0.875rem;
     color: ${props => props.theme.baseText};
 }
