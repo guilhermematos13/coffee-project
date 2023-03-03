@@ -9,6 +9,10 @@ grid-template-columns: calc(60% - 2rem) calc(40%);
 gap: 2rem; 
 `
 
+export const PaymentDetails = styled.div`
+
+`
+
 export const OrderDetailsContainer = styled.div`
 display: flex;
 flex-direction: column;

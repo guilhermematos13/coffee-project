@@ -1,6 +1,10 @@
 import { AddressDetails } from "./components/AddressDetails";
-import { PaymentDetails } from "./components/PaymentDetails";
-import { CheckoutContainer, OrderDetailsContainer, TitleForm } from "./styles";
+import {
+  CheckoutContainer,
+  OrderDetailsContainer,
+  PaymentDetails,
+  TitleForm,
+} from "./styles";
 
 export function Checkout() {
   return (
@@ -10,7 +14,7 @@ export function Checkout() {
         <AddressDetails />
         <PaymentDetails />
       </OrderDetailsContainer>
-      {/* <TitleForm>Cafés selecionados</TitleForm> */}
+      <TitleForm>Cafés selecionados</TitleForm>
     </CheckoutContainer>
   );
 }

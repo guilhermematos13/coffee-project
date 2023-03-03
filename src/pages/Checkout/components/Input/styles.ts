@@ -11,6 +11,10 @@ color: ${props => props.theme.baseText};
 
 &::placeholder {
     color: ${props => props.theme.baseLabel};
+
+&:active {
+    border: 1px solid ${props => props.theme.yellowDark}
+}
 }
 `
 
@@ -24,5 +28,10 @@ color: ${props => props.theme.baseText};
 
 &::placeholder {
     color: ${props => props.theme.baseLabel};
+
+
+&:active {
+    border: 1px solid ${props => props.theme.yellowDark}
+}
 }
 `

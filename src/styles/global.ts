@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
     }
 
+    input:focus{
+        border: 1px solid ${props => props.theme.yellowDark};
+    }
+
     body {
         background-color: ${props => props.theme.white};
         color: ${props => props.theme.baseText};
