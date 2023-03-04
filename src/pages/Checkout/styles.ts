@@ -9,8 +9,14 @@ grid-template-columns: calc(60% - 2rem) calc(40%);
 gap: 2rem; 
 `
 
-export const PaymentDetails = styled.div`
-
+export const CoffeeSelectContainer = styled.div`
+width:100%;
+display: grid;
+padding: 2.5rem;
+background: ${props => props.theme.baseCard};
+grid-template-columns: auto;
+border-radius: 6px 44px;
+margin-top: 1rem;
 `
 
 export const OrderDetailsContainer = styled.div`

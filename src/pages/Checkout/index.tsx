@@ -1,8 +1,12 @@
 import { AddressDetails } from "./components/AddressDetails";
+import ExpressoTradicional from "../../data/assets/expresso.svg";
+import Latte from "../../data/assets/latte.svg";
+import { CoffeeItem } from "./components/CoffeeItem";
+import { PaymentDetails } from "./components/PaymentDetails";
 import {
   CheckoutContainer,
+  CoffeeSelectContainer,
   OrderDetailsContainer,
-  PaymentDetails,
   TitleForm,
 } from "./styles";
 
@@ -14,7 +18,17 @@ export function Checkout() {
         <AddressDetails />
         <PaymentDetails />
       </OrderDetailsContainer>
-      <TitleForm>Cafés selecionados</TitleForm>
+      <div>
+        <TitleForm>Cafés selecionados</TitleForm>
+        <CoffeeSelectContainer>
+          <CoffeeItem
+            image={ExpressoTradicional}
+            price="R$ 9,90"
+            title="Expresso Tradicional"
+          />
+          <CoffeeItem image={Latte} price="R$ 19,90" title="Latte" />
+        </CoffeeSelectContainer>
+      </div>
     </CheckoutContainer>
   );
 }
