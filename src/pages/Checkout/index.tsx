@@ -6,6 +6,7 @@ import { PaymentDetails } from "./components/PaymentDetails";
 import {
   CheckoutContainer,
   CoffeeSelectContainer,
+  LineTest,
   OrderDetailsContainer,
   TitleForm,
 } from "./styles";
@@ -26,6 +27,7 @@ export function Checkout() {
             price="R$ 9,90"
             title="Expresso Tradicional"
           />
+          <LineTest></LineTest>
           <CoffeeItem image={Latte} price="R$ 19,90" title="Latte" />
         </CoffeeSelectContainer>
       </div>
