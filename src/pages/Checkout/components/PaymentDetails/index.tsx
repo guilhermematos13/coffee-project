@@ -1,9 +1,11 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
+import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Button } from "../Button";
 import {
   DescriptionPayment,
   OptionsPaymentButtons,
   PaymentDetailsContainer,
+  RadioButtonOptions,
 } from "./styles";
 
 export function PaymentDetails() {
@@ -18,10 +20,20 @@ export function PaymentDetails() {
           </p>
         </div>
       </DescriptionPayment>
+
       <OptionsPaymentButtons>
-        <Button icon={<CreditCard size={22} />}>cartão de crédito</Button>
-        <Button icon={<Bank size={22} />}>cartão de débito</Button>
-        <Button icon={<Money size={22} />}>dinheiro</Button>
+        <RadioButtonOptions value="creditCard">
+          <CreditCard size={16} />
+          Cartão de crédito
+        </RadioButtonOptions>
+        <RadioButtonOptions value="debitCard">
+          <Bank size={16} />
+          cartão de débito
+        </RadioButtonOptions>
+        <RadioButtonOptions value="money">
+          <Money size={16} />
+          dinheiro
+        </RadioButtonOptions>
       </OptionsPaymentButtons>
     </PaymentDetailsContainer>
   );

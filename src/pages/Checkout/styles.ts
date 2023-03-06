@@ -5,7 +5,7 @@ width: 100%;
 padding: 2rem 10rem;
 margin-top: 2.5rem;
 display: grid;
-grid-template-columns: calc(70% - 2rem) calc(30%);
+grid-template-columns: calc(60% - 2rem) calc(40%);
 gap: 2rem; 
 `
 
@@ -59,9 +59,11 @@ export const ValueDetailsTitle = styled.p`
 font-size: 0.75rem;
 color: ${props => props.theme.baseText};`
 
+
 export const ValuesDetailsPrice = styled.p`
 font-size: 1rem;
 color: ${props => props.theme.baseText};`
+
 
 export const ConfirmedOrderButton = styled.button`
 border: 0;
@@ -74,5 +76,4 @@ color: ${props => props.theme.white};
 background: ${props => props.theme.yellow};
 border-radius: 6px;
 cursor: pointer;
-
 `
