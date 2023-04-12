@@ -7,13 +7,14 @@ import {
   CheckoutContainer,
   CoffeeSelectContainer,
   ConfirmedOrderButton,
-  LineTest,
+  Line,
   OrderDetailsContainer,
   PaymentDataContainer,
   TitleForm,
   ValueDetailsTitle,
   ValuesDetailsPrice,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 export function Checkout() {
   return (
@@ -31,9 +32,9 @@ export function Checkout() {
             price="R$ 9,90"
             title="Expresso Tradicional"
           />
-          <LineTest></LineTest>
+          <Line></Line>
           <CoffeeItem image={Latte} price="R$ 19,90" title="Latte" />
-          <LineTest></LineTest>
+          <Line></Line>
           <PaymentDataContainer>
             <div className="linePayment">
               <ValueDetailsTitle>Total de itens</ValueDetailsTitle>
@@ -44,11 +45,13 @@ export function Checkout() {
               <ValuesDetailsPrice>R$ 3,50</ValuesDetailsPrice>
             </div>
             <div className="linePayment">
-              <strong className="">Total</strong>
+              <strong>Total</strong>
               <strong>R$ 33,20</strong>
             </div>
           </PaymentDataContainer>
-          <ConfirmedOrderButton>Confirma Pedido</ConfirmedOrderButton>
+          <Link to="/success">
+            <ConfirmedOrderButton>Confirma Pedido</ConfirmedOrderButton>
+          </Link>
         </CoffeeSelectContainer>
       </div>
     </CheckoutContainer>

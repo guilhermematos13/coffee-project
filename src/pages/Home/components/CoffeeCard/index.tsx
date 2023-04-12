@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ActionsContainer,
   CoffeeCardContainer,
@@ -14,12 +15,24 @@ import {
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 
 export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
+  const [count, setCount] = useState(1);
+
+  function incrementCount() {
+    setCount(count + 1);
+  }
+
+  function decrementCount() {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  }
+
   return (
     <CoffeeCardContainer key={coffee.id}>
       <img src={coffee.image} />
       <TagContainer>
         {coffee.tags.map((tag) => (
-          <TagTitle>{tag}</TagTitle>
+          <TagTitle key={tag}>{tag}</TagTitle>
         ))}
       </TagContainer>
       <CoffeeTitle>{coffee.title}</CoffeeTitle>
@@ -34,11 +47,11 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
         <ActionsContainer>
           <QuantitySelectionContainer>
             <QuantitySelection>
-              <Minus weight="bold" size={14} />
+              <Minus weight="bold" size={14} onClick={decrementCount} />
             </QuantitySelection>
-            <span>1</span>
+            <span>{count}</span>
             <QuantitySelection>
-              <Plus weight="bold" size={14} />
+              <Plus weight="bold" size={14} onClick={incrementCount} />
             </QuantitySelection>
           </QuantitySelectionContainer>
 
