@@ -1,54 +1,68 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import SummaryImage from "../../../../assets/HomeImage.svg";
 import {
-  IconsSummary,
-  SummaryContainer,
-  SummaryHeader,
-  SummarySection,
+  Container,
+  Icon,
+  Item,
+  ItemTitle,
+  ItemsContainer,
+  Subtitle,
+  SubtitleContainer,
+  TitleContent,
+  TitleStrong,
 } from "./styles";
 
 export function Summary() {
   return (
-    <SummaryContainer>
-      <SummaryHeader>
-        <strong>
-          Encontre o café perfeito <br></br> para qualquer hora do dia
-        </strong>
+    <Container>
+      <TitleContent>
         <p>
-          Com o Coffee Delivery você recebe seu café onde estiver, a<br></br>
-          qualquer hora
+          <TitleStrong>Encontre o café perfeito </TitleStrong>
         </p>
-        <SummarySection>
-          <span>
-            <IconsSummary variant="yellowDark">
-              <ShoppingCart weight="fill" />
-            </IconsSummary>
-            Compra simples e segura
-          </span>
-          <span>
-            <IconsSummary variant="gray">
-              <Package weight="fill" />
-            </IconsSummary>
-            Embalagem mantém o café intacto
-          </span>
-          <span>
-            <IconsSummary variant="yellow">
-              <Timer weight="fill" />
-            </IconsSummary>
-            Entrega rápida e rastreada
-          </span>
-          <span>
-            <IconsSummary variant="purple">
-              <Coffee weight="fill" />
-            </IconsSummary>
-            O café chega fresquinho até você
-          </span>
-        </SummarySection>
-      </SummaryHeader>
+        <p>
+          <TitleStrong>para qualquer hora do dia</TitleStrong>
+        </p>
+        <SubtitleContainer>
+          <p>
+            <Subtitle>
+              Com o Coffee Delivery você recebe seu café onde estiver, a
+            </Subtitle>
+          </p>
+          <p>
+            <Subtitle>qualquer hora</Subtitle>
+          </p>
+        </SubtitleContainer>
+        <ItemsContainer>
+          <Item>
+            <Icon variant="YellowDark">
+              <ShoppingCart weight="fill" color="#FFFFFF" />
+            </Icon>
+            <ItemTitle>Compra simples e segura</ItemTitle>
+          </Item>
+          <Item>
+            <Icon variant="Gray">
+              <Package weight="fill" color="#FFFFFF" />
+            </Icon>
+            <ItemTitle>Embalagem mantém o café intacto</ItemTitle>
+          </Item>
+          <Item>
+            <Icon variant="Yellow">
+              <Timer weight="fill" color="#FFFFFF" />
+            </Icon>
+            <ItemTitle>Entrega rápida e rastreada</ItemTitle>
+          </Item>
+          <Item>
+            <Icon variant="Purple">
+              <Coffee weight="fill" color="#FFFFFF" />
+            </Icon>
+            <ItemTitle>O café chega fresquinho até você</ItemTitle>
+          </Item>
+        </ItemsContainer>
+      </TitleContent>
       <img
         src={SummaryImage}
         alt="Uma imagem com um copo de isopor branco e preto ao centro com um fundo amarelo ao lado esquerdo do copo contém grãos de café e ao lado direito grãos e pós de café"
       />
-    </SummaryContainer>
+    </Container>
   );
 }
