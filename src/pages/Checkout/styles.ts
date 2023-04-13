@@ -7,6 +7,11 @@ export const CheckoutContainer = styled.div`
   display: grid;
   grid-template-columns: calc(60% - 2rem) calc(40%);
   gap: 2rem;
+
+  @media screen and (max-width: 1440px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const CoffeeSelectContainer = styled.div`
