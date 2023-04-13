@@ -8,14 +8,13 @@ import {
   ItemsContainer,
   Subtitle,
   SubtitleContainer,
-  TitleContent,
   TitleStrong,
 } from "./styles";
 
 export function Summary() {
   return (
     <Container>
-      <TitleContent>
+      <div>
         <p>
           <TitleStrong>Encontre o café perfeito </TitleStrong>
         </p>
@@ -58,7 +57,8 @@ export function Summary() {
             <ItemTitle>O café chega fresquinho até você</ItemTitle>
           </Item>
         </ItemsContainer>
-      </TitleContent>
+      </div>
+
       <img
         src={SummaryImage}
         alt="Uma imagem com um copo de isopor branco e preto ao centro com um fundo amarelo ao lado esquerdo do copo contém grãos de café e ao lado direito grãos e pós de café"

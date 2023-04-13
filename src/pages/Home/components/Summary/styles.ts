@@ -5,18 +5,29 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 34rem;
-  padding: 92px 160px;
+  height: auto;
+  padding: 5.75rem 160px;
   background-image: url(${background});
   background-size: contain;
 
   img {
-    height: 22.5rem;
-    width: 30rem;
+    height: 25rem;
+    width: 40rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    img {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    img {
+      height: 15rem;
+      width: 30rem;
+    }
   }
 `;
-
-export const TitleContent = styled.div``;
 
 export const TitleStrong = styled.strong`
   font-size: 3rem;
@@ -41,6 +52,11 @@ export const ItemsContainer = styled.div`
   gap: 1.25rem;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 4rem;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Item = styled.div`

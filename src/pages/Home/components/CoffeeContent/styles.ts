@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  width: 100%;
+  padding: 5.75rem 10rem;
+  margin-top: 2rem;
+`;
+
 export const CoffeeContentContainer = styled.div`
-width: 100%;
-padding: 2rem 10rem;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4.75rem;
+`;
 
 export const TitleCoffeeContent = styled.strong`
-width: 100%;
-padding: 2rem 10rem;
-font-size: 2rem;
-font-family: 'Baloo 2';
-font-weight: 800;
-color: ${props => props.theme.baseSubTitle}
-`
+  margin-bottom: 3.25rem;
+  font-size: 2rem;
+  font-family: "Baloo 2";
+  font-weight: 800;
+  color: ${(props) => props.theme.baseSubTitle};
+`;
