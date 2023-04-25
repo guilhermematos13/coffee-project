@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useCart from "../../../../store/cart";
 import {
   ActionsContainer,
   CoffeeCardContainer,
@@ -16,6 +17,7 @@ import { Minus, Plus, ShoppingCart } from "phosphor-react";
 
 export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
   const [count, setCount] = useState(1);
+  const { setCart } = useCart();
 
   function incrementCount() {
     setCount(count + 1);
@@ -25,6 +27,17 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
     if (count > 1) {
       setCount(count - 1);
     }
+  }
+
+  function saveOnCart() {
+    setCart({
+      id: coffee.id,
+      image: coffee.image,
+      title: coffee.title,
+      coin: coffee.coin,
+      price: coffee.price,
+      quantity: count,
+    });
   }
 
   return (
@@ -55,7 +68,7 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
             </QuantitySelection>
           </QuantitySelectionContainer>
 
-          <ShoppingCartButton>
+          <ShoppingCartButton onClick={saveOnCart}>
             <ShoppingCart weight="fill" size={22} />
           </ShoppingCartButton>
         </ActionsContainer>
