@@ -1,6 +1,5 @@
 import { AddressDetails } from "./components/AddressDetails";
 import ExpressoTradicional from "../../data/assets/expresso.svg";
-import Latte from "../../data/assets/latte.svg";
 import { CoffeeItem } from "./components/CoffeeItem";
 import { PaymentDetails } from "./components/PaymentDetails";
 import {
@@ -15,8 +14,13 @@ import {
   ValuesDetailsPrice,
 } from "./styles";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { EmptyCoffee } from "./components/EmptyCoffee";
 
 export function Checkout() {
+  const { coffees } = useContext(CartContext);
+
   return (
     <CheckoutContainer>
       <OrderDetailsContainer>
@@ -26,15 +30,25 @@ export function Checkout() {
       </OrderDetailsContainer>
       <div>
         <TitleForm>Cafés selecionados</TitleForm>
+
         <CoffeeSelectContainer>
-          <CoffeeItem
-            image={ExpressoTradicional}
-            price="R$ 9,90"
-            title="Expresso Tradicional"
-          />
-          <Line></Line>
-          <CoffeeItem image={Latte} price="R$ 19,90" title="Latte" />
-          <Line></Line>
+          {coffees.length > 0 ? (
+            coffees.map((coffee) => (
+              <>
+                <CoffeeItem
+                  key={coffee.id}
+                  coin={coffee.coin}
+                  image={coffee.image}
+                  price={coffee.price}
+                  title={coffee.title}
+                  quantity={coffee.quantity}
+                />
+                <Line />
+              </>
+            ))
+          ) : (
+            <EmptyCoffee />
+          )}
           <PaymentDataContainer>
             <div className="linePayment">
               <ValueDetailsTitle>Total de itens</ValueDetailsTitle>

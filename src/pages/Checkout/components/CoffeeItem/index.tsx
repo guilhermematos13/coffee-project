@@ -1,5 +1,4 @@
-import { Minus, Plus, Trash } from "phosphor-react";
-import ExpressoTradicional from "../../../../data/assets/expresso.svg";
+import { Minus, Plus } from "phosphor-react";
 import {
   QuantitySelection,
   QuantitySelectionContainer,
@@ -12,7 +11,13 @@ import {
   CoffeeItemsContainer,
 } from "./styles";
 
-export function CoffeeItem({ title, image, price }: ItemCoffeeInterface) {
+export function CoffeeItem({
+  image,
+  price,
+  title,
+  coin,
+  quantity,
+}: ItemCoffeeInterface) {
   return (
     <CoffeeItemsContainer>
       <CoffeeDetailsContainer>
@@ -24,7 +29,7 @@ export function CoffeeItem({ title, image, price }: ItemCoffeeInterface) {
               <QuantitySelection>
                 <Minus weight="bold" size={14} />
               </QuantitySelection>
-              <span>1</span>
+              <span>{quantity}</span>
               <QuantitySelection>
                 <Plus weight="bold" size={14} />
               </QuantitySelection>
@@ -33,6 +38,7 @@ export function CoffeeItem({ title, image, price }: ItemCoffeeInterface) {
           </ActionsOptions>
         </ActionOptionsContainer>
       </CoffeeDetailsContainer>
+      <strong>{coin}</strong>
       <strong>{price}</strong>
     </CoffeeItemsContainer>
   );

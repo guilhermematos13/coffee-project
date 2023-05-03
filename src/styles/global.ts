@@ -12,12 +12,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     input:focus{
-        border: 1px solid ${props => props.theme.yellowDark};
+        border: 1px solid ${(props) => props.theme.yellowDark};
     }
 
     body {
-        background-color: ${props => props.theme.white};
-        color: ${props => props.theme.baseText};
+        background-color: ${(props) => props.theme.white};
+        color: ${(props) => props.theme.baseText};
         -webkit-font-smoothing: antialiased;
     }
 
@@ -25,4 +25,4 @@ export const GlobalStyle = createGlobalStyle`
         font: 400 1rem Roboto, sans-serif
     }
 
-`
+`;

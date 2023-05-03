@@ -1,5 +1,5 @@
-import { useState } from "react";
-import useCart from "../../../../store/cart";
+import { createContext, useContext, useState } from "react";
+import ExpressoTradicional from "../../../../data/assets/expresso.svg";
 import {
   ActionsContainer,
   CoffeeCardContainer,
@@ -14,10 +14,13 @@ import {
   TagTitle,
 } from "./styles";
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
+import { CartContext } from "../../../../context/CartContext";
 
 export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
+  const { createItem, removeItem, toUpdateItem, coffees } =
+    useContext(CartContext);
+
   const [count, setCount] = useState(1);
-  const { setCart } = useCart();
 
   function incrementCount() {
     setCount(count + 1);
@@ -27,17 +30,6 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
     if (count > 1) {
       setCount(count - 1);
     }
-  }
-
-  function saveOnCart() {
-    setCart({
-      id: coffee.id,
-      image: coffee.image,
-      title: coffee.title,
-      coin: coffee.coin,
-      price: coffee.price,
-      quantity: count,
-    });
   }
 
   return (
@@ -67,8 +59,18 @@ export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
               <Plus weight="bold" size={14} onClick={incrementCount} />
             </QuantitySelection>
           </QuantitySelectionContainer>
-
-          <ShoppingCartButton onClick={saveOnCart}>
+          <ShoppingCartButton
+            onClick={() => {
+              createItem({
+                coin: coffee.coin,
+                id: coffee.id,
+                image: coffee.image,
+                price: coffee.price,
+                quantity: count,
+                title: coffee.title,
+              });
+            }}
+          >
             <ShoppingCart weight="fill" size={22} />
           </ShoppingCartButton>
         </ActionsContainer>
