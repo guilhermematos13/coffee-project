@@ -2,6 +2,6 @@ interface ItemCoffeeInterface {
   image: any;
   title: string;
   coin: string;
-  price: string;
+  price: number;
   quantity: number;
 }

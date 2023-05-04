@@ -71,7 +71,7 @@ export function Checkout() {
                   <CoffeeItem
                     coin={coffee.coin}
                     image={coffee.image}
-                    price={coffee.price}
+                    price={coffee.price * coffee.quantity}
                     title={coffee.title}
                     quantity={coffee.quantity}
                   />
