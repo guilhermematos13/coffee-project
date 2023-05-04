@@ -48,6 +48,16 @@ export function Checkout() {
     });
   };
 
+  function getCartTotal() {
+    let cartTotal = 0;
+    coffees.forEach((item) => {
+      cartTotal += Number(item.price) * item.quantity;
+    });
+    return cartTotal;
+  }
+
+  let Total = getCartTotal() + Number(3.5);
+
   return (
     <form onSubmit={handleSubmit(handleSubmitData)}>
       <CheckoutContainer>
@@ -84,15 +94,17 @@ export function Checkout() {
             <PaymentDataContainer>
               <div className="linePayment">
                 <ValueDetailsTitle>Total de itens</ValueDetailsTitle>
-                <ValuesDetailsPrice>R$ 29,70</ValuesDetailsPrice>
+                <ValuesDetailsPrice>
+                  R$ {getCartTotal().toFixed(2)}
+                </ValuesDetailsPrice>
               </div>
               <div className="linePayment">
                 <ValueDetailsTitle>Entrega</ValueDetailsTitle>
-                <ValuesDetailsPrice>R$ 3,50</ValuesDetailsPrice>
+                <ValuesDetailsPrice>R$ 3.50</ValuesDetailsPrice>
               </div>
               <div className="linePayment">
                 <strong>Total</strong>
-                <strong>R$ 33,20</strong>
+                <strong>R$ {Total.toFixed(2)}</strong>
               </div>
             </PaymentDataContainer>
             <ConfirmedOrderButton type="submit">
