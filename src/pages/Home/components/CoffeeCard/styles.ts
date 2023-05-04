@@ -103,6 +103,7 @@ export const QuantitySelection = styled.button`
   justify-content: center;
   background: transparent;
   border-radius: 6px;
+  cursor: pointer;
 
   svg {
     color: ${(props) => props.theme.purple};
@@ -122,6 +123,7 @@ export const ShoppingCartButton = styled.button`
   border-radius: 6px;
   color: ${(props) => props.theme.white};
   background: ${(props) => props.theme.purpleDark};
+  cursor: pointer;
 
   &:hover {
     background: ${(props) => props.theme.purple};

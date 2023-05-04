@@ -13,8 +13,10 @@ interface Coffee {
 
 interface CartContextType {
   coffees: Coffee[];
+  setCoffees: React.Dispatch<React.SetStateAction<Coffee[]>>;
   createItem: (coffee: Coffee) => void;
-  toUpdateItem: () => void;
+  toIncrementCoffee: (id: string) => void;
+  toDecrementCoffee: (id: string) => void;
   removeItem: (id: string) => void;
   itemsQuantity: () => number;
 }
@@ -38,8 +40,36 @@ export function CartContextProvider({ children }: TransactionProviderProps) {
     });
   };
 
-  const toUpdateItem = () => {
-    console.log("Oii");
+  const toIncrementCoffee = (id: string) => {
+    const updatedCartItems = coffees.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+      return item;
+    });
+    setCoffees(updatedCartItems);
+  };
+
+  const toDecrementCoffee = (id: string) => {
+    const updateCartItems: any = coffees
+      .map((item) => {
+        if (item.id === id) {
+          const updatedQuantity = item.quantity - 1;
+          if (updatedQuantity <= 0) {
+            return;
+          }
+          return {
+            ...item,
+            quantity: updatedQuantity,
+          };
+        }
+        return item;
+      })
+      .filter(Boolean);
+    setCoffees(updateCartItems);
   };
 
   const removeItem = (idToRemove: string) => {
@@ -58,7 +88,15 @@ export function CartContextProvider({ children }: TransactionProviderProps) {
 
   return (
     <CartContext.Provider
-      value={{ createItem, toUpdateItem, removeItem, coffees, itemsQuantity }}
+      value={{
+        createItem,
+        toIncrementCoffee,
+        toDecrementCoffee,
+        removeItem,
+        coffees,
+        setCoffees,
+        itemsQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

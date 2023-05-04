@@ -21,7 +21,8 @@ export function CoffeeItem({
   coin,
   quantity,
 }: ItemCoffeeInterface) {
-  const { removeItem } = useContext(CartContext);
+  const { removeItem, toIncrementCoffee, toDecrementCoffee } =
+    useContext(CartContext);
   return (
     <CoffeeItemsContainer>
       <CoffeeDetailsContainer>
@@ -30,11 +31,19 @@ export function CoffeeItem({
           <label>{title}</label>
           <ActionsOptions>
             <QuantitySelectionContainer>
-              <QuantitySelection>
+              <QuantitySelection
+                onClick={() => {
+                  toDecrementCoffee(id);
+                }}
+              >
                 <Minus weight="bold" size={14} />
               </QuantitySelection>
               <span>{quantity}</span>
-              <QuantitySelection>
+              <QuantitySelection
+                onClick={() => {
+                  toIncrementCoffee(id);
+                }}
+              >
                 <Plus weight="bold" size={14} />
               </QuantitySelection>
             </QuantitySelectionContainer>

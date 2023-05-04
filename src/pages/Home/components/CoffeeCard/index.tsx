@@ -17,8 +17,7 @@ import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { CartContext } from "../../../../context/CartContext";
 
 export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
-  const { createItem, removeItem, toUpdateItem, coffees } =
-    useContext(CartContext);
+  const { createItem } = useContext(CartContext);
 
   const [count, setCount] = useState(1);
 

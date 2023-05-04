@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Checkout() {
   const navigate = useNavigate();
-  const { coffees } = useContext(CartContext);
+  const { coffees, setCoffees } = useContext(CartContext);
   const {
     register,
     handleSubmit,
@@ -30,7 +30,6 @@ export function Checkout() {
     clearErrors,
   } = useForm();
   const handleSubmitData = (data: any) => {
-    console.log(data);
     if (data.paymentOption) {
       return navigate("/success", {
         state: {
