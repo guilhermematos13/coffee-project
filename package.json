@@ -14,9 +14,11 @@
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^6.8.1",
     "styled-components": "^5.3.6",
+    "yup": "^1.1.1",
     "zustand": "^4.3.7"
   },
   "devDependencies": {

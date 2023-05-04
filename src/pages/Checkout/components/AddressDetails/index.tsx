@@ -6,8 +6,14 @@ import {
   DescriptionTitle,
   FormContainer,
 } from "./styles";
+import { InputUF } from "../InputUF";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
-export function AddressDetails() {
+interface AddressDetailsProps {
+  register: UseFormRegister<FieldValues>;
+}
+
+export function AddressDetails({ register }: AddressDetailsProps) {
   return (
     <AddressDetailsContainer>
       <DescriptionTitle>
@@ -19,17 +25,40 @@ export function AddressDetails() {
       </DescriptionTitle>
       <FormContainer>
         <div className="cepInput">
-          <Input mask placeholder="CEP"></Input>
+          <Input
+            id="CEP"
+            {...register("CEP", { required: true })}
+            mask
+            placeholder="CEP"
+          />
         </div>
-        <Input placeholder="Rua" />
+        <Input {...register("address", { required: true })} placeholder="Rua" />
         <div className="numberAndComplement">
-          <Input placeholder="Número" />
-          <InputSuffix suffix="Opcional" placeholder="Complemento" />
+          <Input
+            {...register("number", { required: true })}
+            placeholder="Número"
+          />
+          <InputSuffix
+            {...register("complements")}
+            suffix="Opcional"
+            placeholder="Complemento"
+          />
         </div>
         <div className="addressOtherDetails">
-          <Input placeholder="Bairro" />
-          <Input placeholder="Cidade" />
-          <Input placeholder="UF" />
+          <Input
+            {...register("neighborhood", { required: true })}
+            placeholder="Bairro"
+          />
+          <Input placeholder="Cidade" {...register("city")} />
+          <InputUF
+            type="text"
+            {...register("UF", {
+              required: true,
+              pattern: /[A-Za-z]{2}/,
+            })}
+            maxLength={2}
+            placeholder="UF"
+          />
         </div>
       </FormContainer>
     </AddressDetailsContainer>
