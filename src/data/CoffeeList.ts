@@ -21,7 +21,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Expresso Tradicional",
     description: "O tradicional café feito com água quente e grãos moídos",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -31,7 +31,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Expresso Americano",
     description: "Expresso diluído, menos intenso que o tradicional",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -41,7 +41,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Expresso Cremoso",
     description: "Café expresso tradicional com espuma cremosa",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -51,7 +51,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Expresso Gelado",
     description: "Bebida preparada com café expresso e cubos de gelo",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -61,7 +61,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Café com Leite",
     description: "Meio a meio de expresso tradicional com leite vaporizado",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -72,7 +72,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     description:
       "Uma dose de café expresso com o dobro de leite e espuma cremosa",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -83,7 +83,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     description:
       "Bebida com canela feita de doses iguais de café, leite e espuma",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -94,7 +94,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     description:
       "Café expresso misturado com um pouco de leite quente e espuma",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -104,7 +104,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Mochaccino",
     description: "Café expresso com calda de chocolate, pouco leite e espuma",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -114,7 +114,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Chocolate Quente",
     description: "Bebida feita com chocolate dissolvido no leite quente e café",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -125,7 +125,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     description:
       "Drink gelado de café expresso com rum, creme de leite e hortelã",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -135,7 +135,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Havaiano",
     description: "Bebida adocicada preparada com café e leite de coco",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -145,7 +145,7 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Árabe",
     description: "Bebida preparada com grãos de café árabe e especiarias",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 
   {
@@ -155,6 +155,6 @@ export const CoffeeList: CoffeeListInterface[] = [
     title: "Irlandês",
     description: "Bebida preparada com grãos de café árabe e especiarias",
     coin: "R$",
-    price: "9.90",
+    price: (9.9).toFixed(2),
   },
 ];

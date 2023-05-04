@@ -10,14 +10,18 @@ import {
   CoffeeDetailsContainer,
   CoffeeItemsContainer,
 } from "./styles";
+import { useContext } from "react";
+import { CartContext } from "../../../../context/CartContext";
 
 export function CoffeeItem({
+  id,
   image,
   price,
   title,
   coin,
   quantity,
 }: ItemCoffeeInterface) {
+  const { removeItem } = useContext(CartContext);
   return (
     <CoffeeItemsContainer>
       <CoffeeDetailsContainer>
@@ -34,7 +38,13 @@ export function CoffeeItem({
                 <Plus weight="bold" size={14} />
               </QuantitySelection>
             </QuantitySelectionContainer>
-            <ButtonRemove>Remover</ButtonRemove>
+            <ButtonRemove
+              onClick={() => {
+                removeItem(id);
+              }}
+            >
+              Remover
+            </ButtonRemove>
           </ActionsOptions>
         </ActionOptionsContainer>
       </CoffeeDetailsContainer>

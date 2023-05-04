@@ -7,7 +7,7 @@ interface Coffee {
   image: any;
   title: string;
   coin: string;
-  price: number;
+  price: string;
   quantity: number;
 }
 
@@ -15,7 +15,7 @@ interface CartContextType {
   coffees: Coffee[];
   createItem: (coffee: Coffee) => void;
   toUpdateItem: () => void;
-  removeItem: () => void;
+  removeItem: (id: string) => void;
   itemsQuantity: () => number;
 }
 
@@ -42,8 +42,9 @@ export function CartContextProvider({ children }: TransactionProviderProps) {
     console.log("Oii");
   };
 
-  const removeItem = () => {
-    console.log("Oiii");
+  const removeItem = (idToRemove: string) => {
+    let newList = coffees.filter((item) => item.id !== idToRemove);
+    setCoffees(newList);
   };
 
   const itemsQuantity = () => {

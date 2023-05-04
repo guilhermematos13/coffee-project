@@ -6,7 +6,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export function ButtonRemove(props: ButtonProps) {
   return (
-    <ButtonRemoveStyled>
+    <ButtonRemoveStyled {...props}>
       <Trash size={16} />
       {props.children}
     </ButtonRemoveStyled>

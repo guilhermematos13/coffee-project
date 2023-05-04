@@ -69,9 +69,10 @@ export function Checkout() {
               coffees.map((coffee) => (
                 <div key={coffee.id}>
                   <CoffeeItem
+                    id={coffee.id}
                     coin={coffee.coin}
                     image={coffee.image}
-                    price={coffee.price * coffee.quantity}
+                    price={Number(coffee.price) * coffee.quantity}
                     title={coffee.title}
                     quantity={coffee.quantity}
                   />
