@@ -7,7 +7,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Input = forwardRef(
   (props: InputProps, ref: ForwardedRef<never>) => {
-    console.log(props);
     if (props.mask) {
       return <InputMasked {...props} mask="99999-999" ref={ref} />;
     }

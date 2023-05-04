@@ -21,8 +21,33 @@ import { useNavigate } from "react-router-dom";
 export function Checkout() {
   const navigate = useNavigate();
   const { coffees } = useContext(CartContext);
-  const { register, handleSubmit, setValue } = useForm();
-  const handleSubmitData = () => navigate("/success");
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    setError,
+    formState: { errors },
+    clearErrors,
+  } = useForm();
+  const handleSubmitData = (data: any) => {
+    console.log(data);
+    if (data.paymentOption) {
+      return navigate("/success", {
+        state: {
+          address: data.address,
+          number: data.number,
+          neighborhood: data.neighborhood,
+          city: data.city,
+          UF: data.UF,
+          paymentOption: data.paymentOption,
+        },
+      });
+    }
+    setError("paymentOption", {
+      type: "required",
+      message: "Selecione uma forma de pagamento!",
+    });
+  };
 
   return (
     <form onSubmit={handleSubmit(handleSubmitData)}>
@@ -30,7 +55,11 @@ export function Checkout() {
         <OrderDetailsContainer>
           <TitleForm>Complete seu pedido</TitleForm>
           <AddressDetails register={register} />
-          <PaymentDetails setValue={setValue} />
+          <PaymentDetails
+            setValue={setValue}
+            errors={errors}
+            clearErrors={clearErrors}
+          />
         </OrderDetailsContainer>
         <div>
           <TitleForm>Cafés selecionados</TitleForm>
