@@ -18,12 +18,6 @@ export function CoffeeItem({
   coin,
   quantity,
 }: ItemCoffeeInterface) {
-  function priceTransform(price: string) {
-    const myString = price;
-    const myNumber = parseFloat(myString).toFixed(2);
-    return myNumber;
-  }
-
   return (
     <CoffeeItemsContainer>
       <CoffeeDetailsContainer>
@@ -45,7 +39,7 @@ export function CoffeeItem({
         </ActionOptionsContainer>
       </CoffeeDetailsContainer>
       <strong>{coin}</strong>
-      <strong>{priceTransform(price)}</strong>
+      <strong>{price.toFixed(2)}</strong>
     </CoffeeItemsContainer>
   );
 }
