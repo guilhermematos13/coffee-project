@@ -1,6 +1,6 @@
-import { ReactNode, useState, createContext } from "react";
-import ExpressoTradicional from "../data/assets/expresso.svg";
-import ExpressoCremoso from "../data/assets/expressoCremoso.svg";
+import { ReactNode, useState, createContext } from 'react';
+import ExpressoTradicional from '../data/assets/expresso.svg';
+import ExpressoCremoso from '../data/assets/expressoCremoso.svg';
 
 interface Coffee {
   id: string;
@@ -31,13 +31,26 @@ export function CartContextProvider({ children }: TransactionProviderProps) {
   const [coffees, setCoffees] = useState<Coffee[]>([]);
 
   const createItem = (coffee: Coffee) => {
-    setCoffees((state) => [...state, coffee]);
-    /* ForEach
-       Verificar se o id do novo item e igual a algum id ja existente, se sim substituir a quantidade
-    */
-    coffees.forEach((item, index) => {
-      coffee.id === item.id;
-    });
+    const existingCoffee = coffees.find((item) => item.id === coffee.id);
+    if (existingCoffee) {
+      const newCart = coffees.map((item) => {
+        if (item.id === existingCoffee.id) {
+          return {
+            ...item,
+            quantity: item.quantity + coffee.quantity,
+          };
+        }
+        return item;
+      });
+      setCoffees(newCart);
+    } else {
+      const newCoffee = {
+        ...coffee,
+        quantity: 1,
+      };
+
+      setCoffees((state) => [...state, coffee]);
+    }
   };
 
   const toIncrementCoffee = (id: string) => {

@@ -1,6 +1,6 @@
-import { AddressDetails } from "./components/AddressDetails";
-import { CoffeeItem } from "./components/CoffeeItem";
-import { PaymentDetails } from "./components/PaymentDetails";
+import { AddressDetails } from './components/AddressDetails';
+import { CoffeeItem } from './components/CoffeeItem';
+import { PaymentDetails } from './components/PaymentDetails';
 import {
   CheckoutContainer,
   CoffeeSelectContainer,
@@ -11,16 +11,17 @@ import {
   TitleForm,
   ValueDetailsTitle,
   ValuesDetailsPrice,
-} from "./styles";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
-import { EmptyCoffee } from "./components/EmptyCoffee";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+} from './styles';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { EmptyCoffee } from './components/EmptyCoffee';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 export function Checkout() {
   const navigate = useNavigate();
   const { coffees, setCoffees } = useContext(CartContext);
+
   const {
     register,
     handleSubmit,
@@ -29,9 +30,10 @@ export function Checkout() {
     formState: { errors },
     clearErrors,
   } = useForm();
+
   const handleSubmitData = (data: any) => {
     if (data.paymentOption) {
-      return navigate("/success", {
+      return navigate('/success', {
         state: {
           address: data.address,
           number: data.number,
@@ -42,9 +44,9 @@ export function Checkout() {
         },
       });
     }
-    setError("paymentOption", {
-      type: "required",
-      message: "Selecione uma forma de pagamento!",
+    setError('paymentOption', {
+      type: 'required',
+      message: 'Selecione uma forma de pagamento!',
     });
   };
 
@@ -54,6 +56,10 @@ export function Checkout() {
       cartTotal += Number(item.price) * item.quantity;
     });
     return cartTotal;
+  }
+
+  function cartEmpty() {
+    setCoffees([]);
   }
 
   let Total = getCartTotal() + Number(3.5);
