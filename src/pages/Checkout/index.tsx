@@ -33,6 +33,7 @@ export function Checkout() {
 
   const handleSubmitData = (data: any) => {
     if (data.paymentOption) {
+      setCoffees([]);
       return navigate('/success', {
         state: {
           address: data.address,
@@ -56,10 +57,6 @@ export function Checkout() {
       cartTotal += Number(item.price) * item.quantity;
     });
     return cartTotal;
-  }
-
-  function cartEmpty() {
-    setCoffees([]);
   }
 
   let Total = getCartTotal() + Number(3.5);
