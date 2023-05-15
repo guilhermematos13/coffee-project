@@ -1,17 +1,17 @@
-import { Minus, Plus } from "phosphor-react";
+import { Minus, Plus } from 'phosphor-react';
 import {
   QuantitySelection,
   QuantitySelectionContainer,
-} from "../../../Home/components/CoffeeCard/styles";
-import { ButtonRemove } from "../RemoveButton";
+} from '../../../Home/components/CoffeeCard/styles';
+import { ButtonRemove } from '../RemoveButton';
 import {
   ActionOptionsContainer,
   ActionsOptions,
   CoffeeDetailsContainer,
   CoffeeItemsContainer,
-} from "./styles";
-import { useContext } from "react";
-import { CartContext } from "../../../../context/CartContext";
+} from './styles';
+import { useContext } from 'react';
+import { CartContext } from '../../../../context/CartContext';
 
 export function CoffeeItem({
   id,

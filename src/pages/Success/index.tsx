@@ -4,10 +4,10 @@ import {
   FirstIcon,
   IconStyled,
   UserData,
-} from "./styles";
-import SuccessImage from "../../assets/Illustration.svg";
-import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
-import { useLocation } from "react-router-dom";
+} from './styles';
+import SuccessImage from '../../assets/Illustration.svg';
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
+import { useLocation } from 'react-router-dom';
 
 export function Success() {
   const location = useLocation();
@@ -24,7 +24,7 @@ export function Success() {
               <MapPin weight="fill" />
             </IconStyled>
             <p>
-              Entrega em{" "}
+              Entrega em{' '}
               <b>
                 {state?.address}, {state?.number}
               </b>
@@ -50,9 +50,9 @@ export function Success() {
               Pagamento na entrega
               <br />
               <b>
-                {state?.paymentOption === "debitCard" && "Cartão de Débito"}
-                {state?.paymentOption === "creditCard" && "Cartão de Crédito"}
-                {state?.paymentOption === "money" && "Dinheiro"}
+                {state?.paymentOption === 'debitCard' && 'Cartão de Débito'}
+                {state?.paymentOption === 'creditCard' && 'Cartão de Crédito'}
+                {state?.paymentOption === 'money' && 'Dinheiro'}
               </b>
             </p>
           </div>

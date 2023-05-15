@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -10,13 +10,13 @@ export const Container = styled.div`
 
   h1 {
     color: ${(props) => props.theme.yellowDark};
-    font-family: "Baloo 2", sans-serif;
+    font-family: 'Baloo 2', sans-serif;
     margin-bottom: 0.25rem;
   }
 
   p {
     font-size: 1.25rem;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 
@@ -62,7 +62,7 @@ export const FirstIcon = styled.div`
 `;
 
 interface IconStyledProps {
-  variant: "purple" | "yellow" | "yellowDark";
+  variant: 'purple' | 'yellow' | 'yellowDark';
 }
 
 export const IconStyled = styled.span<IconStyledProps>`
@@ -74,10 +74,10 @@ export const IconStyled = styled.span<IconStyledProps>`
   margin-right: 8px;
   border-radius: 999px;
   background-color: ${(props) =>
-    props.variant === "purple"
+    props.variant === 'purple'
       ? props.theme.purple
-      : props.variant === "yellow"
+      : props.variant === 'yellow'
       ? props.theme.yellow
-      : props.variant === "yellowDark" && props.theme.yellowDark};
+      : props.variant === 'yellowDark' && props.theme.yellowDark};
   color: ${(props) => props.theme.white};
 `;

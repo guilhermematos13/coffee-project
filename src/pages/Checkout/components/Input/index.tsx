@@ -1,5 +1,5 @@
-import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
-import { InputForm, InputMasked } from "./styles";
+import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
+import { InputForm, InputMasked } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   mask?: boolean;

@@ -1,6 +1,4 @@
 import { ReactNode, useState, createContext } from 'react';
-import ExpressoTradicional from '../data/assets/expresso.svg';
-import ExpressoCremoso from '../data/assets/expressoCremoso.svg';
 
 interface Coffee {
   id: string;

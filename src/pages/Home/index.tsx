@@ -1,5 +1,5 @@
-import { CoffeeContent } from "./components/CoffeeContent";
-import { Summary } from "./components/Summary";
+import { CoffeeContent } from './components/CoffeeContent';
+import { Summary } from './components/Summary';
 
 export function Home() {
   return (

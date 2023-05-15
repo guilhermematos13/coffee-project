@@ -1,5 +1,5 @@
-import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
-import SummaryImage from "../../../../assets/HomeImage.svg";
+import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
+import SummaryImage from '../../../../assets/HomeImage.svg';
 import {
   Container,
   Icon,
@@ -9,7 +9,7 @@ import {
   Subtitle,
   SubtitleContainer,
   TitleStrong,
-} from "./styles";
+} from './styles';
 
 export function Summary() {
   return (

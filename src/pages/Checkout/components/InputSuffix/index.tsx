@@ -1,5 +1,5 @@
-import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
-import { InputSuffixStyled } from "./styles";
+import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
+import { InputSuffixStyled } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   suffix: string;

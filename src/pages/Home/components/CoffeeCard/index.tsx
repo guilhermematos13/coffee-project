@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from "react";
-import ExpressoTradicional from "../../../../data/assets/expresso.svg";
+import { useContext, useState } from 'react';
 import {
   ActionsContainer,
   CoffeeCardContainer,
@@ -12,9 +11,9 @@ import {
   ShoppingCartButton,
   TagContainer,
   TagTitle,
-} from "./styles";
-import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { CartContext } from "../../../../context/CartContext";
+} from './styles';
+import { Minus, Plus, ShoppingCart } from 'phosphor-react';
+import { CartContext } from '../../../../context/CartContext';
 
 export function CoffeeCard({ coffee }: { coffee: CoffeeListInterface }) {
   const { createItem } = useContext(CartContext);

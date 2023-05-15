@@ -1,17 +1,17 @@
-import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
+import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react';
 import {
   DescriptionPayment,
   ErrorContainer,
   OptionsPaymentButtons,
   PaymentDetailsContainer,
   RadioButtonOptions,
-} from "./styles";
+} from './styles';
 import {
   FieldErrors,
   FieldValues,
   UseFormClearErrors,
   UseFormSetValue,
-} from "react-hook-form";
+} from 'react-hook-form';
 
 interface PaymentDetailsProps {
   setValue: UseFormSetValue<FieldValues>;
@@ -39,8 +39,8 @@ export function PaymentDetails({
       <OptionsPaymentButtons>
         <RadioButtonOptions
           onClick={() => {
-            setValue("paymentOption", "debitCard");
-            clearErrors("paymentOption");
+            setValue('paymentOption', 'debitCard');
+            clearErrors('paymentOption');
           }}
           value="debitCard"
         >
@@ -49,8 +49,8 @@ export function PaymentDetails({
         </RadioButtonOptions>
         <RadioButtonOptions
           onClick={() => {
-            setValue("paymentOption", "creditCard");
-            clearErrors("paymentOption");
+            setValue('paymentOption', 'creditCard');
+            clearErrors('paymentOption');
           }}
           value="creditCard"
         >
@@ -59,8 +59,8 @@ export function PaymentDetails({
         </RadioButtonOptions>
         <RadioButtonOptions
           onClick={() => {
-            setValue("paymentOption", "money");
-            clearErrors("paymentOption");
+            setValue('paymentOption', 'money');
+            clearErrors('paymentOption');
           }}
           value="money"
         >

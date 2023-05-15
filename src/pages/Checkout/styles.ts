@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CheckoutContainer = styled.div`
   width: 100%;
@@ -37,7 +37,7 @@ export const OrderDetailsContainer = styled.div`
 `;
 
 export const TitleForm = styled.strong`
-  font-family: "Baloo 2";
+  font-family: 'Baloo 2';
   font-weight: 700;
   font-size: 1.125rem;
   margin-bottom: 1rem;

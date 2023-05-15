@@ -4,12 +4,12 @@ import {
   HeaderContainer,
   LocaleButton,
   QuantityCoffee,
-} from "./styles";
-import Logo from "../../../../assets/LogoHeader.svg";
-import { MapPin, ShoppingCart } from "phosphor-react";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../../../../context/CartContext";
+} from './styles';
+import Logo from '../../../../assets/LogoHeader.svg';
+import { MapPin, ShoppingCart } from 'phosphor-react';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../../../context/CartContext';
 
 export function Header() {
   const { coffees, itemsQuantity } = useContext(CartContext);

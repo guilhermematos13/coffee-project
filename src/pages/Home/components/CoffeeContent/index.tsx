@@ -1,10 +1,10 @@
-import { CoffeeList } from "../../../../data/CoffeeList";
-import { CoffeeCard } from "../CoffeeCard";
+import { CoffeeList } from '../../../../data/CoffeeList';
+import { CoffeeCard } from '../CoffeeCard';
 import {
   CoffeeContentContainer,
   Container,
   TitleCoffeeContent,
-} from "./styles";
+} from './styles';
 
 export function CoffeeContent() {
   return (
