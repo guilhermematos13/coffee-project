@@ -88,4 +88,8 @@ export const ConfirmedOrderButton = styled.button`
   background: ${(props) => props.theme.yellow};
   border-radius: 6px;
   cursor: pointer;
+
+  :disabled {
+    cursor: not-allowed;
+  }
 `;

@@ -12,7 +12,7 @@ import {
   ValueDetailsTitle,
   ValuesDetailsPrice,
 } from './styles';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { EmptyCoffee } from './components/EmptyCoffee';
 import { useForm } from 'react-hook-form';
@@ -20,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function Checkout() {
   const navigate = useNavigate();
+  const [isDisabled, setIsDisabled] = useState(false);
   const { coffees, setCoffees } = useContext(CartContext);
 
   const {
@@ -110,7 +111,10 @@ export function Checkout() {
                 <strong>R$ {Total.toFixed(2)}</strong>
               </div>
             </PaymentDataContainer>
-            <ConfirmedOrderButton type="submit">
+            <ConfirmedOrderButton
+              disabled={coffees.length === 0 ? true : false}
+              type="submit"
+            >
               Confirma Pedido
             </ConfirmedOrderButton>
           </CoffeeSelectContainer>
