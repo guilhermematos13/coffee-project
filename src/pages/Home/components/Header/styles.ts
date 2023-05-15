@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -12,6 +12,14 @@ export const HeaderContainer = styled.div`
     width: 5.25rem;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 425px) {
+    img {
+      height: 3rem;
+      width: 4.5rem;
+    }
+    padding: 2rem;
+  }
 `;
 
 export const LocaleButton = styled.span`
@@ -24,6 +32,10 @@ export const LocaleButton = styled.span`
   background-color: ${(props) => props.theme.purpleLight};
   padding: 0.5rem;
   border-radius: 6px;
+
+  @media screen and (max-width: 425px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const HeaderButton = styled.div`

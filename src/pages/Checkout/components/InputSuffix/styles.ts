@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InputSuffixStyled = styled.div`
   display: flex;
@@ -30,5 +30,10 @@ export const InputSuffixStyled = styled.div`
     font-size: 0.75rem;
     margin-right: 1rem;
     text-align: right;
+
+    @media screen and (max-width: 425px) {
+      font-size: 0.65rem;
+      width: 18%;
+    }
   }
 `;

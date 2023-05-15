@@ -8,6 +8,10 @@ export const Container = styled.div`
 
   margin-top: 5rem;
 
+  @media screen and (max-width: 425px) {
+    padding: 2rem 60px;
+  }
+
   h1 {
     color: ${(props) => props.theme.yellowDark};
     font-family: 'Baloo 2', sans-serif;

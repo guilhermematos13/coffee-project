@@ -8,6 +8,10 @@ export const CheckoutContainer = styled.div`
   grid-template-columns: calc(60% - 2rem) calc(40%);
   gap: 2rem;
 
+  @media screen and (max-width: 425px) {
+    padding: 2rem 60px;
+  }
+
   @media screen and (max-width: 1440px) {
     display: flex;
     flex-direction: column-reverse;

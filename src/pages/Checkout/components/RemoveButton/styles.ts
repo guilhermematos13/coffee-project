@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ButtonRemoveStyled = styled.button`
   border: 0;
@@ -16,5 +16,9 @@ export const ButtonRemoveStyled = styled.button`
 
   svg {
     color: ${(props) => props.theme.purple};
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 0.5rem;
   }
 `;
