@@ -51,7 +51,7 @@ export function AddressDetails({ register }: AddressDetailsProps) {
           />
           <Input
             placeholder="Cidade"
-            {...(register('city'), { required: true })}
+            {...register('city', { required: true })}
           />
           <InputUF
             type="text"
