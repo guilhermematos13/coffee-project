@@ -4,6 +4,10 @@ export const AddressDetailsContainer = styled.div`
   border-radius: 6px;
   background: ${(props) => props.theme.baseCard};
   padding: 2.5rem;
+
+  @media screen and (max-width: 420px) {
+    padding: 1.5rem;
+  }
 `;
 
 export const DescriptionTitle = styled.div`
@@ -16,12 +20,20 @@ export const DescriptionTitle = styled.div`
 
   label {
     color: ${(props) => props.theme.baseSubTitle};
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.75rem;
+    }
   }
 
   p {
     margin-top: 0.25rem;
     font-size: 0.875rem;
     color: ${(props) => props.theme.baseText};
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.65rem;
+    }
   }
 `;
 

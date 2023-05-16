@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -16,7 +16,16 @@ export const CoffeeContentContainer = styled.div`
 export const TitleCoffeeContent = styled.strong`
   margin-bottom: 3.25rem;
   font-size: 2rem;
-  font-family: "Baloo 2";
+  font-family: 'Baloo 2';
   font-weight: 800;
   color: ${(props) => props.theme.baseSubTitle};
+
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    text-align: left;
+  }
 `;

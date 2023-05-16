@@ -8,8 +8,8 @@ export const CheckoutContainer = styled.div`
   grid-template-columns: calc(60% - 2rem) calc(40%);
   gap: 2rem;
 
-  @media screen and (max-width: 425px) {
-    padding: 2rem 60px;
+  @media screen and (min-width: 320px) {
+    padding: 1rem 30px;
   }
 
   @media screen and (max-width: 1440px) {
@@ -21,7 +21,7 @@ export const CheckoutContainer = styled.div`
 export const CoffeeSelectContainer = styled.div`
   width: 100%;
   display: grid;
-  padding: 2.5rem;
+  padding: 2rem 24px;
   background: ${(props) => props.theme.baseCard};
   grid-template-columns: auto;
   border-bottom: 1px solid ${(props) => props.theme.baseButton};
@@ -45,6 +45,10 @@ export const TitleForm = styled.strong`
   font-weight: 700;
   font-size: 1.125rem;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 420px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const PaymentDataContainer = styled.div`
@@ -58,6 +62,12 @@ export const PaymentDataContainer = styled.div`
     align-items: center;
     width: 100%;
     justify-content: space-between;
+
+    @media screen and (max-width: 420px) {
+      strong {
+        font-size: 0.75rem;
+      }
+    }
   }
 
   strong {
@@ -74,6 +84,10 @@ export const ValueDetailsTitle = styled.p`
 export const ValuesDetailsPrice = styled.p`
   font-size: 1rem;
   color: ${(props) => props.theme.baseText};
+
+  @media screen and (max-width: 420px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const ConfirmedOrderButton = styled.button`
@@ -91,5 +105,9 @@ export const ConfirmedOrderButton = styled.button`
 
   :disabled {
     cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 0.65rem;
   }
 `;

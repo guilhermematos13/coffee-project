@@ -30,7 +30,7 @@ export function CoffeeItem({
         <ActionOptionsContainer>
           <label>{title}</label>
           <ActionsOptions>
-            <QuantitySelectionContainer>
+            <QuantitySelectionContainer className="QuantityContainer">
               <QuantitySelection
                 onClick={() => {
                   toDecrementCoffee(id);
@@ -57,8 +57,10 @@ export function CoffeeItem({
           </ActionsOptions>
         </ActionOptionsContainer>
       </CoffeeDetailsContainer>
-      <strong>{coin}</strong>
-      <strong>{price.toFixed(2)}</strong>
+      <div className="priceStrong">
+        <strong>{coin}</strong>
+        <strong>{price.toFixed(2)}</strong>
+      </div>
     </CoffeeItemsContainer>
   );
 }

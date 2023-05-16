@@ -12,7 +12,7 @@ import {
   ValueDetailsTitle,
   ValuesDetailsPrice,
 } from './styles';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { EmptyCoffee } from './components/EmptyCoffee';
 import { useForm } from 'react-hook-form';
@@ -20,7 +20,6 @@ import { useNavigate } from 'react-router-dom';
 
 export function Checkout() {
   const navigate = useNavigate();
-  const [isDisabled, setIsDisabled] = useState(false);
   const { coffees, setCoffees } = useContext(CartContext);
 
   const {

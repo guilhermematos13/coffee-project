@@ -16,6 +16,11 @@ export const ButtonRemoveStyled = styled.button`
 
   svg {
     color: ${(props) => props.theme.purple};
+
+    @media screen and (max-width: 425px) {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   @media screen and (max-width: 425px) {

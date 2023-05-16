@@ -23,6 +23,10 @@ export const InputSuffixStyled = styled.div`
     &:focus {
       border: 1px solid ${(props) => props.theme.yellowDark};
     }
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.75rem;
+    }
   }
 
   span {
@@ -32,7 +36,7 @@ export const InputSuffixStyled = styled.div`
     text-align: right;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.65rem;
+      font-size: 9px;
       width: 18%;
     }
   }

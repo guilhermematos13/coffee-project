@@ -1,37 +1,44 @@
-import styled from "styled-components";
-import InputMask from "react-input-mask";
+import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 
 export const InputForm = styled.input`
-width: 100%;
-border: 0;
-border-radius: 4px;
-padding:0.75rem;
-background: ${props => props.theme.baseButton};
-color: ${props => props.theme.baseText};
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.75rem;
+  background: ${(props) => props.theme.baseButton};
+  color: ${(props) => props.theme.baseText};
 
-&::placeholder {
-    color: ${props => props.theme.baseLabel};
+  &::placeholder {
+    color: ${(props) => props.theme.baseLabel};
 
-&:active {
-    border: 1px solid ${props => props.theme.yellowDark}
-}
-}
-`
+    &:active {
+      border: 1px solid ${(props) => props.theme.yellowDark};
+    }
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.75rem;
+    }
+  }
+`;
 
 export const InputMasked = styled(InputMask)`
-width: 100%;
-border: 0;
-border-radius: 4px;
-padding:0.75rem;
-background: ${props => props.theme.baseButton};
-color: ${props => props.theme.baseText};
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.75rem;
+  background: ${(props) => props.theme.baseButton};
+  color: ${(props) => props.theme.baseText};
 
-&::placeholder {
-    color: ${props => props.theme.baseLabel};
+  &::placeholder {
+    color: ${(props) => props.theme.baseLabel};
 
+    &:active {
+      border: 1px solid ${(props) => props.theme.yellowDark};
+    }
+  }
 
-&:active {
-    border: 1px solid ${props => props.theme.yellowDark}
-}
-}
-`
+  @media screen and (max-width: 420px) {
+    font-size: 0.75rem;
+  }
+`;

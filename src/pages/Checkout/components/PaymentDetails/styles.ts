@@ -14,16 +14,28 @@ export const DescriptionPayment = styled.div`
 
   svg {
     color: ${(props) => props.theme.purple};
+    @media screen and (max-width: 420px) {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   label {
     color: ${(props) => props.theme.baseSubTitle};
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.75rem;
+    }
   }
 
   p {
     margin-top: 0.25rem;
     font-size: 0.875rem;
     color: ${(props) => props.theme.baseText};
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.6rem;
+    }
   }
 `;
 
@@ -54,6 +66,11 @@ export const RadioButtonOptions = styled(RadioGroup.Item)`
   background-color: ${(props) => props.theme.baseButton};
   svg {
     color: ${(props) => props.theme.purple};
+
+    @media screen and (max-width: 420px) {
+      height: 16px;
+      width: 20px;
+    }
   }
 
   &[data-state='unchecked']:hover {
@@ -64,6 +81,10 @@ export const RadioButtonOptions = styled(RadioGroup.Item)`
   &[data-state='checked'] {
     background: ${(props) => props.theme.purpleLight};
     border: 1px solid ${(props) => props.theme.purple};
+  }
+
+  @media screen and (max-width: 420px) {
+    font-size: 0.6rem;
   }
 `;
 

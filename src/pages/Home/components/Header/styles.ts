@@ -20,6 +20,14 @@ export const HeaderContainer = styled.div`
     }
     padding: 2rem;
   }
+
+  @media screen and (max-width: 320px) {
+    img {
+      height: 2.5rem;
+      width: 3.5rem;
+    }
+    padding: 2rem;
+  }
 `;
 
 export const LocaleButton = styled.span`

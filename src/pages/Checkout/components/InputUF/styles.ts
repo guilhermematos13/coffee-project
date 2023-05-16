@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InputForm = styled.input`
   width: 100%;
@@ -14,6 +14,10 @@ export const InputForm = styled.input`
 
     &:active {
       border: 1px solid ${(props) => props.theme.yellowDark};
+    }
+
+    @media screen and (max-width: 420px) {
+      font-size: 0.75rem;
     }
   }
 `;
